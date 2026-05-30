@@ -1,0 +1,15 @@
+artifact_uri: file:./mlruns/1/e6924f94b08b4c089bfcb26bf7606c8b/artifacts
+end_time: 1780126260299
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: active
+run_id: e6924f94b08b4c089bfcb26bf7606c8b
+run_name: orderly-dolphin-356
+run_uuid: e6924f94b08b4c089bfcb26bf7606c8b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780126257054
+status: 3
+tags: []
+user_id: sangramthakur

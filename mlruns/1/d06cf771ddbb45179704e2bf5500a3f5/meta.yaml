@@ -1,0 +1,15 @@
+artifact_uri: file:./mlruns/1/d06cf771ddbb45179704e2bf5500a3f5/artifacts
+end_time: 1780126203980
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: active
+run_id: d06cf771ddbb45179704e2bf5500a3f5
+run_name: enthused-horse-420
+run_uuid: d06cf771ddbb45179704e2bf5500a3f5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780126200655
+status: 4
+tags: []
+user_id: sangramthakur

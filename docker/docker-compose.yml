@@ -1,0 +1,39 @@
+services:
+
+  scoring-api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: scoring-api
+    ports:
+      - "8080:8080"
+    volumes:
+      - ../data:/app/data
+      - ../scoring:/app/scoring
+      - ../training/artifacts:/app/training/artifacts
+      - ../feature_engineering/artifacts:/app/feature_engineering/artifacts
+    environment:
+      - MODEL_PATH=/app/scoring/model.pkl
+      - THRESHOLD_PATH=/app/training/artifacts/threshold.pkl
+      - ENCODER_PATH=/app/feature_engineering/artifacts/encoder.pkl
+      - SCALER_PATH=/app/feature_engineering/artifacts/scaler.pkl
+    restart: unless-stopped
+
+  mlflow:
+    image: python:3.10-slim
+    container_name: mlflow-ui
+    ports:
+      - "5001:5000"
+    volumes:
+      - ../mlruns:/mlruns
+    environment:
+      - MLFLOW_HOST=0.0.0.0
+    command: >
+      bash -c "pip install mlflow==2.3.0 -q &&
+               mlflow server
+               --backend-store-uri file:/mlruns
+               --default-artifact-root file:/mlruns
+               --host 0.0.0.0
+               --port 5000
+               --gunicorn-opts '--bind 0.0.0.0:5000'"
+    restart: unless-stopped
