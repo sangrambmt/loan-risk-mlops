@@ -184,7 +184,7 @@ Overall: 75% production ready. The architecture, code quality, and deployment ar
 
 ## Project Structure
 
-    ml-predictive-model/
+    loan-risk-mlops/
     |
     +-- data/
     |   +-- generate_data.py           generates 100k rows raw data
